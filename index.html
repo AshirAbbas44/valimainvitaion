@@ -1,0 +1,1054 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Walima Invitation - Yasir Abbas & Ashir Abbas</title>
+        
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Noto+Naskh+Arabic:wght@400;600;700&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap" rel="stylesheet">
+        
+        <!-- TailwindCSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        
+        <!-- React -->
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Noto+Naskh+Arabic:wght@400;600;700&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap');
+            
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            body {
+                font-family: 'Playfair Display', serif;
+                background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 50%, #e9d5ff 100%);
+                height: 100vh;
+                overflow: hidden;
+                position: fixed;
+                width: 100%;
+            }
+            
+            .arabic-text {
+                font-family: 'Noto Naskh Arabic', serif;
+                direction: rtl;
+                unicode-bidi: bidi-override;
+            }
+            
+            .urdu-text {
+                font-family: 'Noto Nastaliq Urdu', serif;
+                direction: rtl;
+                unicode-bidi: bidi-override;
+            }
+            
+            .punjabi-text {
+                font-family: 'Noto Nastaliq Urdu', serif;
+                direction: rtl;
+                unicode-bidi: bidi-override;
+            }
+            
+            .saraiki-text {
+                font-family: 'Noto Nastaliq Urdu', serif;
+                direction: rtl;
+                unicode-bidi: bidi-override;
+            }
+            
+            .english-text {
+                font-family: 'Playfair Display', serif;
+                direction: ltr;
+            }
+            
+            /* Elegant Pattern Background */
+            .pattern-bg {
+                background-image: 
+                    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(147, 51, 234, 0.05) 35px, rgba(147, 51, 234, 0.05) 70px),
+                    repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(219, 39, 119, 0.05) 35px, rgba(219, 39, 119, 0.05) 70px);
+            }
+            
+            /* Elegant Card Shadow */
+            .card-shadow {
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15), 0 0 40px rgba(147, 51, 234, 0.15), 0 0 60px rgba(219, 39, 119, 0.1);
+            }
+            
+            /* Elegant Border Animation */
+            @keyframes elegantGlow {
+                0%, 100% { box-shadow: 0 0 20px rgba(147, 51, 234, 0.4), 0 0 30px rgba(219, 39, 119, 0.3); }
+                50% { box-shadow: 0 0 30px rgba(147, 51, 234, 0.6), 0 0 40px rgba(219, 39, 119, 0.5), 0 0 50px rgba(147, 51, 234, 0.3); }
+            }
+            
+            .gold-border {
+                animation: elegantGlow 3s ease-in-out infinite;
+                border: 3px solid #9333ea;
+                position: relative;
+            }
+            
+            .gold-border::before {
+                content: '';
+                position: absolute;
+                inset: -3px;
+                border-radius: inherit;
+                padding: 3px;
+                background: linear-gradient(135deg, #9333ea, #db2777, #9333ea);
+                -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                -webkit-mask-composite: xor;
+                mask-composite: exclude;
+                z-index: -1;
+            }
+            
+            /* Enhanced Animations */
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px) scale(0.9);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0) scale(1);
+                }
+            }
+            
+            @keyframes slideInLeft {
+                from {
+                    opacity: 0;
+                    transform: translateX(-50px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+            
+            @keyframes slideInRight {
+                from {
+                    opacity: 0;
+                    transform: translateX(50px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+            
+            @keyframes scaleIn {
+                from {
+                    opacity: 0;
+                    transform: scale(0.8);
+                }
+                to {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+            
+            @keyframes rotateIn {
+                from {
+                    opacity: 0;
+                    transform: rotate(-10deg) scale(0.9);
+                }
+                to {
+                    opacity: 1;
+                    transform: rotate(0deg) scale(1);
+                }
+            }
+            
+            @keyframes pulse {
+                0%, 100% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.05);
+                }
+            }
+            
+            @keyframes float {
+                0%, 100% {
+                    transform: translateY(0px);
+                }
+                50% {
+                    transform: translateY(-10px);
+                }
+            }
+            
+            @keyframes shimmer {
+                0% {
+                    background-position: -1000px 0;
+                }
+                100% {
+                    background-position: 1000px 0;
+                }
+            }
+            
+            .fade-in-up {
+                animation: fadeInUp 0.8s ease-out forwards;
+            }
+            
+            .slide-in-left {
+                animation: slideInLeft 0.8s ease-out forwards;
+            }
+            
+            .slide-in-right {
+                animation: slideInRight 0.8s ease-out forwards;
+            }
+            
+            .scale-in {
+                animation: scaleIn 0.8s ease-out forwards;
+            }
+            
+            .rotate-in {
+                animation: rotateIn 0.8s ease-out forwards;
+            }
+            
+            .pulse-animation {
+                animation: pulse 2s ease-in-out infinite;
+            }
+            
+            .float-animation {
+                animation: float 3s ease-in-out infinite;
+            }
+            
+            .delay-100 { animation-delay: 0.1s; opacity: 0; }
+            .delay-200 { animation-delay: 0.2s; opacity: 0; }
+            .delay-300 { animation-delay: 0.3s; opacity: 0; }
+            .delay-400 { animation-delay: 0.4s; opacity: 0; }
+            .delay-500 { animation-delay: 0.5s; opacity: 0; }
+            
+            /* Decorative Element with Animation */
+            .ornament {
+                width: 60px;
+                height: 60px;
+                border: 2px solid #9333ea;
+                position: relative;
+                transform: rotate(45deg);
+                animation: pulse 3s ease-in-out infinite;
+            }
+            
+            .ornament::before,
+            .ornament::after {
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                border: 2px solid #db2777;
+                border-radius: 50%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                animation: float 4s ease-in-out infinite;
+            }
+            
+            /* Language Toggle Button */
+            .lang-btn {
+                transition: all 0.3s ease;
+            }
+            
+            .lang-btn:hover {
+                transform: scale(1.05);
+            }
+            
+            .lang-btn.active {
+                background: linear-gradient(135deg, #9333ea 0%, #db2777 100%);
+                color: white;
+            }
+            
+            /* Share Button */
+            .share-btn {
+                background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+                transition: all 0.3s ease;
+            }
+            
+            .share-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 20px rgba(22, 163, 74, 0.3);
+            }
+            
+            /* Map Button */
+            .map-btn {
+                background: linear-gradient(135deg, #9333ea 0%, #db2777 100%);
+                transition: all 0.3s ease;
+            }
+            
+            .map-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 20px rgba(147, 51, 234, 0.4), 0 10px 30px rgba(219, 39, 119, 0.3);
+            }
+            
+            /* Groom Name Visibility Fix */
+            .groom-name {
+                line-height: 1.4 !important;
+                padding: 1rem 0.5rem !important;
+                margin: 1rem 0 !important;
+                overflow: visible !important;
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                min-height: auto !important;
+                max-height: none !important;
+                text-align: center !important;
+            }
+            
+            .urdu-text .groom-name,
+            .punjabi-text .groom-name,
+            .saraiki-text .groom-name {
+                white-space: normal !important;
+                word-wrap: break-word !important;
+                overflow-wrap: break-word !important;
+                text-align: center !important;
+                display: block !important;
+                line-height: 1.5 !important;
+            }
+            
+            /* Bismillah Styling */
+            .bismillah {
+                font-family: 'Noto Naskh Arabic', serif;
+                direction: rtl;
+                font-size: 1.5rem;
+                background: linear-gradient(135deg, #9333ea, #db2777);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                font-weight: 600;
+                text-align: center;
+                letter-spacing: 3px;
+                line-height: 1.8;
+                padding: 0.5rem 0;
+                margin: 0.25rem 0;
+                text-shadow: 0 2px 4px rgba(147, 51, 234, 0.3);
+                animation: fadeInUp 1s ease-out forwards;
+            }
+            
+            @media (max-width: 640px) {
+                .bismillah {
+                    font-size: 1.1rem;
+                    letter-spacing: 2px;
+                }
+            }
+            
+            /* Countdown Timer Watermark Styles */
+        .countdown-watermark {
+            position: absolute;
+            bottom: 2%;
+            left: 0;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0.75;
+            transform: rotate(-90deg);
+            transform-origin: top left;
+        }
+        
+        /* Ensure countdown stays on left for RTL languages */
+        .urdu-text .countdown-watermark,
+        .punjabi-text .countdown-watermark,
+        .saraiki-text .countdown-watermark {
+            left: 0 !important;
+            right: auto !important;
+        }
+            
+            .countdown-watermark-title {
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: #000000;
+                margin-bottom: 0.75rem;
+                text-align: left;
+                opacity: 0.4;
+            }
+            
+            .countdown-watermark-header {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .countdown-watermark-header .waiting-icon {
+                width: 24px;
+                height: 24px;
+                margin: 0;
+                position: relative;
+            }
+            
+            .countdown-watermark-header .waiting-icon svg {
+                width: 24px;
+                height: 24px;
+                color: #000000;
+                filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+                animation: spin 2s linear infinite;
+            }
+            
+            .countdown-watermark-header .waiting-icon::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border: 2px solid #000000;
+                border-radius: 50%;
+                animation: pulse-ring 2s ease-out infinite;
+                opacity: 0.3;
+                top: 0;
+                left: 0;
+            }
+            
+            .countdown-container {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 1.5rem;
+                flex-wrap: nowrap;
+                flex-direction: row;
+            }
+            
+            .countdown-item {
+                background: transparent;
+                border: none;
+                text-align: center;
+            }
+            
+            .countdown-number {
+                font-size: 4rem;
+                font-weight: bold;
+                color: #000000;
+                line-height: 1;
+                text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+                opacity: 0.3;
+            }
+            
+            .countdown-label {
+                font-size: 1rem;
+                color: #000000;
+                margin-top: 0.5rem;
+                opacity: 0.4;
+            }
+            
+            @media (max-width: 640px) {
+                .countdown-watermark {
+                    position: absolute;
+                    bottom: 2%;
+                    left: 0;
+                    z-index: 1;
+                    pointer-events: none;
+                    opacity: 0.75;
+                    transform: rotate(-90deg);
+                    transform-origin: top left;
+                }
+                
+                /* Ensure countdown stays on left for RTL languages on mobile */
+                .urdu-text .countdown-watermark,
+                .punjabi-text .countdown-watermark,
+                .saraiki-text .countdown-watermark {
+                    left: 0 !important;
+                    right: auto !important;
+                }
+                .countdown-watermark-title {
+                    font-size: 1rem;
+                    margin-bottom: 0.5rem;
+                }
+                .countdown-watermark-header .waiting-icon {
+                    width: 18px;
+                    height: 18px;
+                }
+                .countdown-watermark-header .waiting-icon svg {
+                    width: 18px;
+                    height: 18px;
+                }
+                .countdown-watermark-header {
+                    gap: 0.3rem;
+                    margin-bottom: 0.4rem;
+                }
+                .countdown-number {
+                    font-size: 2rem;
+                }
+                .countdown-label {
+                    font-size: 0.6rem;
+                }
+                .countdown-container {
+                    gap: 0.75rem;
+                }
+            }
+            
+            /* Waiting Icon Animation */
+            @keyframes spin {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+            
+            @keyframes pulse-ring {
+                0% {
+                    transform: scale(0.8);
+                    opacity: 1;
+                }
+                100% {
+                    transform: scale(2.4);
+                    opacity: 0;
+                }
+            }
+            
+            .waiting-icon {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                width: 40px;
+                height: 40px;
+                margin: 0 0.5rem;
+            }
+            
+            .waiting-icon svg {
+                animation: spin 2s linear infinite;
+                filter: drop-shadow(0 2px 4px rgba(147, 51, 234, 0.4));
+            }
+            
+            .waiting-icon::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border: 2px solid #9333ea;
+                border-radius: 50%;
+                animation: pulse-ring 2s ease-out infinite;
+            }
+            
+            @media (max-width: 640px) {
+                .countdown-item {
+                    padding: 0.5rem 0.75rem;
+                    min-width: 50px;
+                }
+                .countdown-number {
+                    font-size: 1.25rem;
+                }
+                .countdown-label {
+                    font-size: 0.65rem;
+                }
+                .waiting-icon {
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+            
+            /* Ensure content wrapper doesn't clip */
+            .relative.z-10 {
+                overflow: visible !important;
+            }
+            
+            /* Main Title Visibility Fix */
+            .main-title {
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                overflow: visible !important;
+                line-height: 1.4 !important;
+                padding: 1rem 0.5rem !important;
+                margin: 0.5rem 0 !important;
+                min-height: auto !important;
+                max-height: none !important;
+                text-align: center !important;
+            }
+            
+            .urdu-text .main-title,
+            .punjabi-text .main-title,
+            .saraiki-text .main-title {
+                white-space: normal !important;
+                word-wrap: break-word !important;
+                overflow-wrap: break-word !important;
+                text-align: center !important;
+                display: block !important;
+                line-height: 1.5 !important;
+                padding: 1rem 0.5rem !important;
+            }
+            
+            /* Compact Layout for Single Page */
+            .compact-spacing {
+                margin: 0.25rem 0 !important;
+                padding: 0.25rem 0 !important;
+            }
+            
+            /* Mobile Optimizations for Full Screen Fit */
+            @media (max-width: 640px) {
+                .main-title {
+                    font-size: 1.25rem;
+                    line-height: 1.3 !important;
+                    padding: 0.5rem 0.25rem !important;
+                    margin: 0.25rem 0 !important;
+                }
+                .groom-name {
+                    font-size: 1.6rem;
+                    line-height: 1.3 !important;
+                    padding: 0.5rem 0.25rem !important;
+                    margin: 0.25rem 0 !important;
+                }
+                .bismillah {
+                    font-size: 1rem;
+                    padding: 0.3rem 0 !important;
+                    margin: 0.2rem 0 !important;
+                }
+                .card-container {
+                    padding: 0.75rem 0.75rem 1rem 0.75rem !important;
+                    max-height: calc(100vh - 30px);
+                    height: auto;
+                    display: flex;
+                    flex-direction: column;
+                    overflow-y: auto;
+                    overflow-x: hidden;
+                    box-sizing: border-box;
+                }
+                
+                /* Ensure button is visible */
+                .card-container > div:last-child {
+                    padding-bottom: 0.5rem !important;
+                    margin-bottom: 0 !important;
+                }
+                .ornament {
+                    width: 35px;
+                    height: 35px;
+                }
+                .ornament::before,
+                .ornament::after {
+                    width: 10px;
+                    height: 10px;
+                }
+                /* Optimize spacing for mobile */
+                .content-spacing {
+                    padding: 0.2rem 0 !important;
+                }
+                
+                /* Reduce all margins and spacing */
+                .space-y-1 > * + * {
+                    margin-top: 0.2rem !important;
+                }
+                
+                .my-1 {
+                    margin-top: 0.25rem !important;
+                    margin-bottom: 0.25rem !important;
+                }
+                
+                .my-2 {
+                    margin-top: 0.4rem !important;
+                    margin-bottom: 0.4rem !important;
+                }
+                
+                .mb-1 {
+                    margin-bottom: 0.25rem !important;
+                }
+                
+                .mb-2 {
+                    margin-bottom: 0.4rem !important;
+                }
+                /* Increase text sizes for better use of space */
+                .text-xs {
+                    font-size: 0.85rem !important;
+                }
+                .text-sm {
+                    font-size: 0.9rem !important;
+                }
+                .text-base {
+                    font-size: 1rem !important;
+                }
+                .text-lg {
+                    font-size: 1.1rem !important;
+                }
+                .text-xl {
+                    font-size: 1.2rem !important;
+                }
+                .text-2xl {
+                    font-size: 1.4rem !important;
+                }
+                .text-3xl {
+                    font-size: 1.6rem !important;
+                }
+            }
+            
+            @media (min-width: 641px) and (max-width: 1024px) {
+                .main-title {
+                    font-size: 2rem;
+                }
+                .groom-name {
+                    font-size: 2.5rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="root"></div>
+        
+        <script type="text/babel">
+            const { useState, useEffect } = React;
+            
+            // Translations
+            const translations = {
+                en: {
+                    title: "Walima Invitation",
+                    greeting: "With the grace of Almighty Allah,",
+                    invite: "We cordially invite you to the Walima ceremony of",
+                    ceremony: "",
+                    of: "",
+                    groom: "Yasir Abbas & Ashir Abbas",
+                    date: "on 2nd January 2026",
+                    time: "2:00 PM",
+                    venue: "Marhaba Marquee Shujabad Multan",
+                    venueLabel: "Venue:",
+                    timeLabel: "Time:",
+                    closingMessage: "We would be deeply honored and grateful for your presence.",
+                    share: "Share Invitation",
+                    shareMessage: "You're invited to the Walima ceremony of Yasir Abbas & Ashir Abbas on 2nd January 2026 at 2:00 PM. Venue: Marhaba Marquee Shujabad Multan",
+                    viewMap: "View on Map",
+                    countdownTitle: "Time Remaining",
+                    days: "Days",
+                    hours: "Hours",
+                    minutes: "Minutes",
+                    seconds: "Seconds"
+                },
+                urdu: {
+                    title: "ولیمہ دعوت",
+                    greeting: "اللہ تعالیٰ کے فضل و کرم سے",
+                    invite: "ہم آپ کو بصد احترام دعوت دیتے ہیں",
+                    ceremony: "ولیمہ کی تقریب میں شرکت کے لیے",
+                    of: "",
+                    groom: "یاسر عباس & عاشر عباس",
+                    date: "بتاریخ 2 جنوری 2026",
+                    time: "بوقت دوپہر 2 بجے",
+                    venue: "بمقام مہربا مارکی شجاع آباد ملتان",
+                    venueLabel: "",
+                    timeLabel: "",
+                    closingMessage: "آپ کی شرکت ہمارے لیے باعثِ مسرت اور شکریہ کا باعث ہوگی۔",
+                    share: "دعوت نامہ شیئر کریں",
+                    shareMessage: "آپ کو یاسر عباس & عاشر عباس کے ولیمہ کی تقریب میں شرکت کے لیے بتاریخ 2 جنوری 2026 بوقت دوپہر 2 بجے بمقام مہربا مارکی شجاع آباد ملتان دعوت دی جاتی ہے",
+                    viewMap: "نقشے پر دیکھیں",
+                    countdownTitle: "باقی وقت",
+                    days: "دن",
+                    hours: "گھنٹے",
+                    minutes: "منٹ",
+                    seconds: "سیکنڈ"
+                },
+                punjabi: {
+                    title: "ولیما دعوت",
+                    greeting: "اللہ تعالیٰ دے فضل تے کرم نال",
+                    invite: "اسی تہانوں عزت نال دعوت دیندے آں",
+                    ceremony: "ولیما دی تقریب وِچ شرکت لئی",
+                    of: "",
+                    groom: "یاسر عباس & عاشر عباس",
+                    date: "مورخہ 2 جنوری 2026",
+                    time: "وِلے دوپہر 2 بجے",
+                    venue: "جائے مہربا مارکی شجاع آباد ملتان",
+                    venueLabel: "",
+                    timeLabel: "",
+                    closingMessage: "تُہاڈی شرکت ساڈے لئی خوشی تے شکرگزاری دا باعث بنوے گی۔",
+                    share: "دعوت نامہ شیئر کرو",
+                    shareMessage: "تہانوں یاسر عباس & عاشر عباس دی ولیما دی تقریب وِچ شرکت لئی مورخہ 2 جنوری 2026 وِلے دوپہر 2 بجے جائے مہربا مارکی شجاع آباد ملتان دعوت دتی جاندی اے",
+                    viewMap: "نقشے تے ویکھو",
+                    countdownTitle: "باقی وقت",
+                    days: "دن",
+                    hours: "گھنٹے",
+                    minutes: "منٹ",
+                    seconds: "سیکنڈ"
+                },
+                saraiki: {
+                    title: "ولیما دعوت",
+                    greeting: "اللہ پاک دے فضل تے کرم نال",
+                    invite: "تہاکوں پیار نال ولیمے دی تقریب وچ سدا دتا ویندا",
+                    ceremony: "",
+                    of: "",
+                    groom: "یاسر عباس & عاشر عباس",
+                    date: "2 جنوری 2026 تاریخ:",
+                    time: "دوپہر 2 وڄے ویلھا:",
+                    venue: "مہربا مارکی شجاع آباد ملتان جاء:",
+                    venueLabel: "",
+                    timeLabel: "",
+                    closingMessage: "تہاݙی موجودگی ساݙے لئی عزت تے خوشی دی گل ہوسی۔",
+                    share: "دعوت نامہ شیئر کرو",
+                    shareMessage: "تہاکوں یاسر عباس & عاشر عباس دی ولیمے دی تقریب وچ شرکت لئی 2 جنوری 2026 دوپہر 2 وڄے مہربا مارکی شجاع آباد ملتان دعوت دتی وینٖدی اے",
+                    viewMap: "📍 نقشے تے ݙیکھو",
+                    countdownTitle: "باقی وقت",
+                    days: "دن",
+                    hours: "گھنٹے",
+                    minutes: "منٹ",
+                    seconds: "سیکنڈ"
+                }
+            };
+            
+            function App() {
+                const [language, setLanguage] = useState('en');
+                const [animationKey, setAnimationKey] = useState(0);
+                const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+                const t = translations[language];
+                
+                // Countdown timer calculation
+                useEffect(() => {
+                    const eventDate = new Date('2026-01-02T14:00:00').getTime();
+                    
+                    const updateCountdown = () => {
+                        const now = new Date().getTime();
+                        const distance = eventDate - now;
+                        
+                        if (distance > 0) {
+                            setCountdown({
+                                days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+                                hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+                                minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+                                seconds: Math.floor((distance % (1000 * 60)) / 1000)
+                            });
+                        } else {
+                            setCountdown({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+                        }
+                    };
+                    
+                    updateCountdown();
+                    const interval = setInterval(updateCountdown, 1000);
+                    
+                    return () => clearInterval(interval);
+                }, []);
+                
+                // Force animation restart on language change
+                useEffect(() => {
+                    setAnimationKey(prev => prev + 1);
+                }, [language]);
+                
+                // Set font direction based on language
+                const getTextClass = () => {
+                    if (language === 'urdu') return 'urdu-text';
+                    if (language === 'punjabi') return 'punjabi-text';
+                    if (language === 'saraiki') return 'saraiki-text';
+                    return 'english-text';
+                };
+                
+                // Share functionality
+                const handleShare = async () => {
+                    const shareData = {
+                        title: t.title,
+                        text: t.shareMessage,
+                        url: window.location.href
+                    };
+                    
+                    try {
+                        if (navigator.share) {
+                            await navigator.share(shareData);
+                        } else {
+                            // Fallback: Copy to clipboard
+                            await navigator.clipboard.writeText(t.shareMessage + ' ' + window.location.href);
+                            alert('Invitation copied to clipboard!');
+                        }
+                    } catch (err) {
+                        console.log('Error sharing:', err);
+                    }
+                };
+                
+                // Open Google Maps
+                const handleViewMap = () => {
+                    window.open('https://maps.app.goo.gl/wYrBvmJjShs6BVnB6?g_st=ac', '_blank');
+                };
+                
+                return (
+                    <div className="h-screen pattern-bg pt-0.5 pb-1 md:py-2 px-2 md:px-4 overflow-hidden flex flex-col">
+                        {/* Language Toggle */}
+                        <div className="flex justify-end mb-1 md:mb-2 max-w-4xl mx-auto w-full">
+                            <div className="flex flex-wrap gap-1 bg-white rounded-full p-1 shadow-lg scale-in">
+                                <button
+                                    onClick={() => setLanguage('en')}
+                                    className={`lang-btn px-2 py-1 rounded-full text-xs font-semibold transition-all ${
+                                        language === 'en' ? 'active text-white' : 'text-gray-700 hover:bg-gray-100'
+                                    }`}
+                                >
+                                    🇬🇧 EN
+                                </button>
+                                <button
+                                    onClick={() => setLanguage('urdu')}
+                                    className={`lang-btn px-2 py-1 rounded-full text-xs font-semibold transition-all ${
+                                        language === 'urdu' ? 'active text-white' : 'text-gray-700 hover:bg-gray-100'
+                                    }`}
+                                >
+                                    🇵🇰 اردو
+                                </button>
+                                <button
+                                    onClick={() => setLanguage('punjabi')}
+                                    className={`lang-btn px-2 py-1 rounded-full text-xs font-semibold transition-all ${
+                                        language === 'punjabi' ? 'active text-white' : 'text-gray-700 hover:bg-gray-100'
+                                    }`}
+                                >
+                                    🇵🇰 پنجابی
+                                </button>
+                                <button
+                                    onClick={() => setLanguage('saraiki')}
+                                    className={`lang-btn px-2 py-1 rounded-full text-xs font-semibold transition-all ${
+                                        language === 'saraiki' ? 'active text-white' : 'text-gray-700 hover:bg-gray-100'
+                                    }`}
+                                >
+                                    🇵🇰 سرائیکی
+                                </button>
+                            </div>
+                        </div>
+                        
+                        {/* Main Invitation Card */}
+                        <div className="max-w-4xl mx-auto flex-1 flex items-start justify-center w-full py-1 md:py-2" style={{ maxHeight: 'calc(100vh - 30px)', minHeight: 'fit-content' }}>
+                            <div className={`bg-gradient-to-br from-white via-purple-50 via-pink-50 to-rose-50 gold-border rounded-2xl md:rounded-3xl card-shadow p-2 md:p-8 relative overflow-hidden w-full card-container ${getTextClass()}`}>
+                                {/* Decorative Corner Elements */}
+                                <div className="absolute top-4 left-4 opacity-20">
+                                    <div className="ornament"></div>
+                                </div>
+                                <div className="absolute top-4 right-4 opacity-20">
+                                    <div className="ornament"></div>
+                                </div>
+                                <div className="absolute bottom-4 left-4 opacity-20">
+                                    <div className="ornament"></div>
+                                </div>
+                                <div className="absolute bottom-4 right-4 opacity-20">
+                                    <div className="ornament"></div>
+                                </div>
+                                
+                                {/* Content */}
+                                <div key={animationKey} className="relative z-10 text-center space-y-1 md:space-y-3 content-spacing" style={{ overflow: 'visible', padding: '0.5rem 0', position: 'relative', zIndex: 10 }}>
+                                    {/* Bismillah */}
+                                    <div className="text-center mb-1 md:mb-1 fade-in-up">
+                                        <p className="bismillah">
+                                            بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
+                                        </p>
+                                    </div>
+                                    
+                                    {/* Title */}
+                                    <div className="scale-in py-0.5 my-0.5 md:py-1 md:my-1" style={{ overflow: 'visible', minHeight: 'auto' }}>
+                                        <h1 className={`main-title text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 pulse-animation ${getTextClass()}`} style={{ display: 'block', visibility: 'visible', opacity: 1, overflow: 'visible', lineHeight: '1.3', padding: '0.5rem 0.25rem', margin: '0', minHeight: 'auto', maxHeight: 'none' }}>
+                                            {t.title}
+                                        </h1>
+                                    </div>
+                                    
+                                    {/* Decorative Line */}
+                                    <div className="slide-in-left delay-100 flex items-center justify-center gap-2 md:gap-3 my-1 md:my-3" style={{ overflow: 'visible' }}>
+                                        <div className="h-px bg-gradient-to-r from-transparent via-purple-400 to-pink-600 flex-1 max-w-16"></div>
+                                        <div className="w-2 h-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 float-animation"></div>
+                                        <div className="h-px bg-gradient-to-r from-pink-600 via-purple-400 to-transparent flex-1 max-w-16"></div>
+                                    </div>
+                                    
+                                    {/* Greeting */}
+                                    <p className={`fade-in-up delay-200 text-sm md:text-base text-gray-700 leading-tight ${getTextClass()}`}>
+                                        {t.greeting}
+                                    </p>
+                                    
+                                    {/* Invitation Text */}
+                                    <p className={`slide-in-right delay-200 text-base md:text-lg text-gray-800 leading-tight ${getTextClass()}`}>
+                                        {t.invite}
+                                    </p>
+                                    
+                                    {t.ceremony && (
+                                        <p className={`rotate-in delay-300 text-xl md:text-2xl font-semibold text-purple-700 ${getTextClass()}`}>
+                                            {t.ceremony}
+                                        </p>
+                                    )}
+                                    
+                                    {/* Of */}
+                                    {t.of && (
+                                        <p className={`fade-in-up delay-300 text-sm md:text-base text-gray-700 ${getTextClass()}`}>
+                                            {t.of}
+                                        </p>
+                                    )}
+                                    
+                                    {/* Groom Name */}
+                                    <div className="scale-in delay-300 py-0.5 my-0.5 md:py-1 md:my-1" style={{ overflow: 'visible', minHeight: 'auto' }}>
+                                        <h2 className={`groom-name text-3xl md:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-700 via-pink-600 to-rose-700 float-animation ${getTextClass()}`} style={{ display: 'block', visibility: 'visible', opacity: 1, overflow: 'visible', lineHeight: '1.3', padding: '0.5rem 0.25rem', margin: '0', minHeight: 'auto', maxHeight: 'none' }}>
+                                            {t.groom.replace(/&amp;/g, '&')}
+                                        </h2>
+                                    </div>
+                                    
+                                    {/* Decorative Line */}
+                                    <div className="slide-in-right delay-400 flex items-center justify-center gap-2 md:gap-3 my-1 md:my-3">
+                                        <div className="h-px bg-gradient-to-r from-transparent via-rose-400 to-pink-600 flex-1 max-w-16"></div>
+                                        <div className="w-2 h-2 rounded-full bg-gradient-to-r from-rose-600 to-pink-600 pulse-animation"></div>
+                                        <div className="h-px bg-gradient-to-r from-pink-600 via-rose-400 to-transparent flex-1 max-w-16"></div>
+                                    </div>
+                                    
+                                    {/* Event Details */}
+                                    <div className={`fade-in-up delay-400 space-y-1 md:space-y-1.5 text-gray-800 ${getTextClass()}`}>
+                                        <div className="text-lg md:text-xl font-semibold text-purple-800 scale-in delay-500">
+                                            {t.date}
+                                        </div>
+                                        
+                                        <div className="text-base md:text-lg text-gray-700 slide-in-left delay-500">
+                                            {t.timeLabel && <span className="font-semibold text-pink-700">{t.timeLabel}</span>} {t.time}
+                                        </div>
+                                        
+                                        <div className="text-base md:text-lg text-gray-700 slide-in-right delay-500">
+                                            {t.venueLabel && <span className="font-semibold text-pink-700">{t.venueLabel}</span>} <span className="font-semibold text-purple-800">{t.venue}</span>
+                                        </div>
+                                    </div>
+                                    
+                                    {/* Countdown Timer Watermark (Background) */}
+                                    <div className="countdown-watermark">
+                                        <div className="countdown-watermark-header">
+                                            <span className="waiting-icon">
+                                                <svg className="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
+                                                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none" strokeDasharray="60" strokeDashoffset="30">
+                                                        <animate attributeName="stroke-dasharray" values="0 60;30 30;0 60;0 60" dur="2s" repeatCount="indefinite" />
+                                                        <animate attributeName="stroke-dashoffset" values="0;-30;-60;-60" dur="2s" repeatCount="indefinite" />
+                                                    </circle>
+                                                    <circle cx="12" cy="12" r="6" fill="currentColor" opacity="0.6" />
+                                                </svg>
+                                            </span>
+                                            <h3 className="countdown-watermark-title">{t.countdownTitle}</h3>
+                                            <span className="waiting-icon">
+                                                <svg className="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
+                                                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none" strokeDasharray="60" strokeDashoffset="30">
+                                                        <animate attributeName="stroke-dasharray" values="0 60;30 30;0 60;0 60" dur="2s" repeatCount="indefinite" />
+                                                        <animate attributeName="stroke-dashoffset" values="0;-30;-60;-60" dur="2s" repeatCount="indefinite" />
+                                                    </circle>
+                                                    <circle cx="12" cy="12" r="6" fill="currentColor" opacity="0.6" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <div className="countdown-container">
+                                            <div className="countdown-item">
+                                                <div className="countdown-number">{countdown.days}</div>
+                                                <div className="countdown-label">{t.days}</div>
+                                            </div>
+                                            <div className="countdown-item">
+                                                <div className="countdown-number">{countdown.hours}</div>
+                                                <div className="countdown-label">{t.hours}</div>
+                                            </div>
+                                            <div className="countdown-item">
+                                                <div className="countdown-number">{countdown.minutes}</div>
+                                                <div className="countdown-label">{t.minutes}</div>
+                                            </div>
+                                            <div className="countdown-item">
+                                                <div className="countdown-number">{countdown.seconds}</div>
+                                                <div className="countdown-label">{t.seconds}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    {/* Closing Message */}
+                                    {t.closingMessage && (
+                                        <div className={`fade-in-up delay-500 pt-1 md:pt-3 text-sm md:text-base text-gray-700 italic leading-normal md:leading-relaxed ${getTextClass()}`}>
+                                            {t.closingMessage}
+                                        </div>
+                                    )}
+                                    
+                                    {/* Action Button */}
+                                    <div className="fade-in-up delay-500 pt-1 md:pt-4 pb-2 md:pb-2 flex justify-center items-center">
+                                        <button
+                                            onClick={handleViewMap}
+                                            className="map-btn text-white px-4 py-1.5 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-semibold shadow-lg flex items-center gap-1.5 md:gap-2 pulse-animation hover:scale-110 transition-transform"
+                                        >
+                                            <svg className="w-3 h-3 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            </svg>
+                                            {t.viewMap}
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                );
+            }
+            
+            const root = ReactDOM.createRoot(document.getElementById('root'));
+            root.render(<App />);
+        </script>
+    </body>
+    </html>
